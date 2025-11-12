@@ -1,6 +1,8 @@
 # Piedra, Papel o Tijeras por Visión (MediaPipe + OpenCV)
 
+[![CI](https://github.com/hugoocaabero/rps/actions/workflows/ci.yml/badge.svg)](https://github.com/hugoocaabero/rps/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
+![opencv-python](https://img.shields.io/pypi/v/opencv-python?label=opencv-python) ![mediapipe](https://img.shields.io/pypi/v/mediapipe?label=mediapipe)
 
 Juego de Piedra-Papel-Tijeras controlado por tu mano usando MediaPipe Hands y OpenCV. Incluye un oponente IA sencillo que aprende de tus jugadas y un registro en CSV de los resultados.
 
@@ -17,6 +19,13 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+### Instalación rápida (Linux/Mac)
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## Uso
 ```powershell
 python rps_cv.py
@@ -30,6 +39,10 @@ La detección clasifica: rock (puño), paper (mano abierta), scissors (índice+m
 ## Consejos
 - Asegúrate de tener buena iluminación y que la mano esté centrada.
 - Si no abre la cámara, verifica permisos del sistema o intenta con otro índice de cámara (edita `cv2.VideoCapture(0)`).
+
+### Problemas comunes
+- Si MediaPipe falla al instalar en Linux, prueba `pip install mediapipe --no-binary :all:` o usa Python 3.10.
+- En WSL, la cámara no está soportada nativamente; ejecuta en Windows/Mac/Linux directamente.
 
 ## Licencia
 Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
